@@ -1,0 +1,13 @@
+JARVIS upgrade notes
+
+Changes made:
+- Added Start Floating Mate / Stop Mate controls to Home.
+- Added overlay permission request flow.
+- Added a GitHub Actions manifest XML validation step.
+- Updated README to distinguish implemented features from future roadmap.
+- Removed duplicate nested starter project/archive from the repository root.
+
+Validation performed in this environment:
+- The AndroidManifest.xml inside the uploaded ZIP parsed successfully as XML before and after this update. That means the ZIP alone does not reproduce the reported manifest parser failure; the GitHub copy or original failing run may differ. The new workflow step will show a concrete parser line/column if the committed manifest is malformed.
+- Source/workflow edits were inspected.
+- A full Android Gradle APK build could not be run here because Android SDK/Gradle are not installed in this environment. Run the GitHub Actions workflow to verify compilation and APK generation.
